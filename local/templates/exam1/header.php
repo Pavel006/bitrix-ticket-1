@@ -41,6 +41,17 @@
                         <button type="submit"></button>
                     </form>
                     <nav class="menu-block">
+<?$APPLICATION->IncludeComponent(
+	"bitrix:system.auth.form",
+	"demo",
+	Array(
+		"FORGOT_PASSWORD_URL" => "",
+		"PROFILE_URL" => "",
+		"REGISTER_URL" => "",
+		"SHOW_ERRORS" => "N"
+	)
+);?>
+						<?/*
                         <ul>
                             <li class="att popup-wrap">
                                 <a id="hd_singin_but_open" href="" class="btn-toggle">Войти на сайт</a>
@@ -62,6 +73,7 @@
                             <li><a href="">Зарегистрироваться</a>
                             </li>
                         </ul>
+*/?>
                     </nav>
                 </div>
             </div>
