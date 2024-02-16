@@ -24,7 +24,7 @@
         <!-- header -->
         <header class="header">
             <div class="inner-wrap">
-                <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
+				<div class="logo-block"><a href="/" class="logo">Мебельный магазин</a>
                 </div>
                 <div class="main-phone-block">
 					<?if(date("H") >= "9" AND date("H") <= "18"){?>
@@ -68,7 +68,27 @@
         </header>
         <!-- /header -->
         <!-- nav -->
-        <nav class="nav">
+<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"horizontal_multilevel", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "Y",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "horizontal_multilevel"
+	),
+	false
+);?>
+			<?/*
+ <nav class="nav">
             <div class="inner-wrap">
                 <div class="menu-block popup-wrap">
                     <a href="" class="btn-menu btn-toggle"></a>
@@ -131,6 +151,7 @@
                 </div>
             </div>
         </nav>
+*/?>
         <!-- /nav -->
         <!-- breadcrumbs -->
 		<?if($APPLICATION->GetcurPage() != "/"){?>
